@@ -24,8 +24,6 @@ namespace GameOfThrees
         {
             private uint currentValue;
 
-            private GameOfThrees() { }
-
             public GameOfThrees(uint input)
             {
                 currentValue = input;
@@ -35,20 +33,20 @@ namespace GameOfThrees
             {
                 while (currentValue > 1)
                 {
-                    uint difference = currentValue % 3;
+                    uint remainder = currentValue % 3;
 
-                    if (difference == 0)
+                    if (remainder == 0)
                     {
-                        Console.WriteLine(currentValue.ToString() + ' ' + 0);
+                        Console.WriteLine(currentValue.ToString() + ' ' + remainder.ToString());
                     }
-                    else if (difference == 1)
+                    else if (remainder == 1)
                     {
-                        Console.WriteLine(currentValue.ToString() + ' ' + (difference - 2));
+                        Console.WriteLine(currentValue.ToString() + ' ' + (Convert.ToInt32(remainder) - 2));
                         currentValue -= 1;
                     }
                     else
                     {
-                        Console.WriteLine(currentValue.ToString() + ' ' + (difference - 1));
+                        Console.WriteLine(currentValue.ToString() + ' ' + (remainder - 1));
                         currentValue += 1;
                     }
                     currentValue /= 3;
